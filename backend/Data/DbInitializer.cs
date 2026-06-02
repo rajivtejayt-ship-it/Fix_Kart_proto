@@ -7,11 +7,11 @@ namespace FixKartApi.Data
     {
         public static void Initialize(FixKartDbContext context)
         {
-            // Look for any workers.
-            if (context.Workers.Any())
-            {
-                return;   // DB has been seeded
-            }
+            // Remove early return to allow merging new workers in the future
+            // if (context.Workers.Any())
+            // {
+            //     return;   // DB has been seeded
+            // }
 
             var workers = new Worker[]
             {
@@ -134,12 +134,55 @@ namespace FixKartApi.Data
                     About = "Artisan woodwork practitioner. Specializes in luxury modular setups, custom-designed storage, and high-security smart lock configurations.",
                     IsVerified = true,
                     IsActive = true
+                },
+                new Worker
+                {
+                    Id = "mech-2",
+                    Name = "Vikram Singh",
+                    Category = "mechanic",
+                    AvatarUrl = "https://images.unsplash.com/photo-1620189507195-683091c4c476?w=200&auto=format&fit=crop&q=80",
+                    Experience = "7 Years",
+                    HourlyCharge = 299.00M,
+                    Availability = "Mon - Sun, 9 AM - 9 PM",
+                    ResponseRate = "94% (under 10 mins)",
+                    Rating = 4.8M,
+                    ReviewsCount = 95,
+                    TrustScore = 93,
+                    SkillsJson = JsonSerializer.Serialize(new string[] { "Car AC Repair", "Suspension Fixing", "Battery Jumpstart", "General Servicing" }),
+                    CertificationsJson = JsonSerializer.Serialize(new string[] { "Bosch Advanced Diagnostics Certified" }),
+                    PortfolioJson = JsonSerializer.Serialize(new string[] { "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=150&auto=format&fit=crop&q=80" }),
+                    About = "Specialized in luxury car diagnostics and quick turnaround servicing. Expert in AC cooling issues and suspension overhauls.",
+                    IsVerified = true,
+                    IsActive = true
+                },
+                new Worker
+                {
+                    Id = "carp-2",
+                    Name = "Ramesh Patel",
+                    Category = "carpenter",
+                    AvatarUrl = "https://images.unsplash.com/photo-1542385151-efd9000785a0?w=200&auto=format&fit=crop&q=80",
+                    Experience = "20 Years",
+                    HourlyCharge = 350.00M,
+                    Availability = "Weekends Only",
+                    ResponseRate = "89% (under 30 mins)",
+                    Rating = 4.95M,
+                    ReviewsCount = 420,
+                    TrustScore = 98,
+                    SkillsJson = JsonSerializer.Serialize(new string[] { "Antique Restoration", "Door Polishing", "Custom Bed Frames", "Wardrobe Fitting" }),
+                    CertificationsJson = JsonSerializer.Serialize(new string[] { "Heritage Woodworkers Guild Member" }),
+                    PortfolioJson = JsonSerializer.Serialize(new string[] { "https://images.unsplash.com/photo-1601084224734-7ddbe5a3194a?w=150&auto=format&fit=crop&q=80" }),
+                    About = "A seasoned craftsman focusing on preserving and restoring vintage furniture, alongside bespoke wardrobe designs.",
+                    IsVerified = true,
+                    IsActive = true
                 }
             };
 
             foreach (Worker w in workers)
             {
-                context.Workers.Add(w);
+                if (!context.Workers.Any(dbW => dbW.Id == w.Id))
+                {
+                    context.Workers.Add(w);
+                }
             }
             context.SaveChanges();
         }

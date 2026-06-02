@@ -315,6 +315,12 @@ export default function App() {
                 setCurrentUser(res.user);
                 setModalOpen(false);
             } else {
+                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+                if (!passwordRegex.test(password)) {
+                    setAuthError("Password must be at least 8 chars with upper and lower case letters.");
+                    setIsLoading(false);
+                    return;
+                }
                 const res = await firebaseAuthService.registerWithEmail(email, password, authName, authRole);
                 setCurrentUser(res.user);
                 setModalOpen(false);
@@ -1188,15 +1194,28 @@ export default function App() {
                                     <div className="mb-4">
                                         <label className="block text-xs font-semibold text-gray-400 mb-1.5">Select Service Category</label>
                                         <select className="w-full bg-white/5 border border-white/10 rounded-lg p-2.5 text-xs text-white" id="bookCat">
-                                            <option value="electrician">Electrician & Electrical</option>
-                                            <option value="plumber">Plumber & Piping</option>
-                                            <option value="mechanic">Bike Mechanic & Tuning</option>
-                                            <option value="carpenter">Carpenter & Woodwork</option>
+                                            <option value="electrician" className="text-gray-900">Electrician & Electrical</option>
+                                            <option value="plumber" className="text-gray-900">Plumber & Piping</option>
+                                            <option value="mechanic" className="text-gray-900">Bike Mechanic & Tuning</option>
+                                            <option value="carpenter" className="text-gray-900">Carpenter & Woodwork</option>
                                         </select>
                                     </div>
-                                    <div className="mb-4">
-                                        <label className="block text-xs font-semibold text-gray-400 mb-1.5">Job Location</label>
-                                        <input type="text" className="w-full bg-white/5 border border-white/10 rounded-lg p-2.5 text-xs text-white" defaultValue="Indiranagar, Bangalore" required />
+                                    <div className="grid grid-cols-2 gap-4 mb-4">
+                                        <div>
+                                            <label className="block text-xs font-semibold text-gray-400 mb-1.5">Region</label>
+                                            <select className="w-full bg-white/5 border border-white/10 rounded-lg p-2.5 text-xs text-white" id="bookRegion" required>
+                                                <option value="" className="text-gray-900">Select Region</option>
+                                                <option value="indiranagar" className="text-gray-900">Indiranagar</option>
+                                                <option value="koramangala" className="text-gray-900">Koramangala</option>
+                                                <option value="hsr" className="text-gray-900">HSR Layout</option>
+                                                <option value="whitefield" className="text-gray-900">Whitefield</option>
+                                                <option value="jayanagar" className="text-gray-900">Jayanagar</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label className="block text-xs font-semibold text-gray-400 mb-1.5">Detailed Address</label>
+                                            <input type="text" className="w-full bg-white/5 border border-white/10 rounded-lg p-2.5 text-xs text-white" placeholder="Flat No / Street" required />
+                                        </div>
                                     </div>
                                     <div className="grid grid-cols-2 gap-4 mb-4">
                                         <div>
@@ -1230,10 +1249,10 @@ export default function App() {
                                         <div>
                                             <label className="block text-xs font-semibold text-gray-400 mb-1.5">Specialty Category</label>
                                             <select className="w-full bg-white/5 border border-white/10 rounded-lg p-2.5 text-xs text-white">
-                                                <option value="electrician">Electrician</option>
-                                                <option value="plumber">Plumber</option>
-                                                <option value="mechanic">Bike Mechanic</option>
-                                                <option value="carpenter">Carpenter</option>
+                                                <option value="electrician" className="text-gray-900">Electrician</option>
+                                                <option value="plumber" className="text-gray-900">Plumber</option>
+                                                <option value="mechanic" className="text-gray-900">Bike Mechanic</option>
+                                                <option value="carpenter" className="text-gray-900">Carpenter</option>
                                             </select>
                                         </div>
                                     </div>
