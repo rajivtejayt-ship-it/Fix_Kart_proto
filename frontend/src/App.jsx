@@ -13,6 +13,7 @@ const workersData = {
             experience: "8 Years",
             charge: "₹299",
             availability: "Today, 9 AM - 6 PM",
+            location: "Indiranagar, Bangalore",
             responseRate: "98% (under 12 mins)",
             rating: "4.9",
             reviewsCount: 184,
@@ -32,6 +33,7 @@ const workersData = {
             experience: "5 Years",
             charge: "₹249",
             availability: "Mon - Sat, 10 AM - 5 PM",
+            location: "Koramangala, Bangalore",
             responseRate: "95% (under 15 mins)",
             rating: "4.8",
             reviewsCount: 112,
@@ -43,6 +45,42 @@ const workersData = {
                 "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=150&auto=format&fit=crop&q=80"
             ],
             about: "Experienced electrical engineer focusing on eco-friendly power backups, complex multi-phase lighting matrices, and rapid domestic fault detections."
+        },
+        {
+            id: "elec-3",
+            name: "Syed Ali",
+            avatar: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=200&auto=format&fit=crop&q=80",
+            experience: "12 Years",
+            charge: "₹399",
+            availability: "24/7 Emergency",
+            location: "Whitefield, Bangalore",
+            responseRate: "99% (under 5 mins)",
+            rating: "5.0",
+            reviewsCount: 305,
+            trustScore: "99",
+            skills: ["Industrial Wiring", "Panel Boards", "Transformer Maintenance", "High Voltage Setup"],
+            certifications: ["Master Electrician License", "Safety First Verified"],
+            portfolio: [
+                "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=150&auto=format&fit=crop&q=80"
+            ],
+            about: "Top-rated electrician for emergency high voltage issues and complex panel board installations in the Whitefield area."
+        },
+        {
+            id: "elec-4",
+            name: "Priya Sharma",
+            avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&auto=format&fit=crop&q=80",
+            experience: "3 Years",
+            charge: "₹199",
+            availability: "Weekends, 9 AM - 8 PM",
+            location: "HSR Layout, Bangalore",
+            responseRate: "92% (under 25 mins)",
+            rating: "4.6",
+            reviewsCount: 45,
+            trustScore: "90",
+            skills: ["Fan Replacement", "Switch Upgrades", "LED Installations", "Basic Repairs"],
+            certifications: ["Vocational Training Certificate"],
+            portfolio: [],
+            about: "Quick and affordable electrical fixes for apartments. I handle everyday electrical needs with a friendly approach."
         }
     ],
     plumber: [
@@ -53,6 +91,7 @@ const workersData = {
             experience: "12 Years",
             charge: "₹349",
             availability: "Emergency Only, 24/7",
+            location: "Jayanagar, Bangalore",
             responseRate: "99% (under 9 mins)",
             rating: "4.95",
             reviewsCount: 310,
@@ -72,6 +111,7 @@ const workersData = {
             experience: "6 Years",
             charge: "₹199",
             availability: "Today, 12 PM - 8 PM",
+            location: "Bellandur, Bangalore",
             responseRate: "91% (under 20 mins)",
             rating: "4.7",
             reviewsCount: 88,
@@ -82,6 +122,23 @@ const workersData = {
                 "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=150&auto=format&fit=crop&q=80"
             ],
             about: "Quick, efficient, and cost-effective home plumbing fixes. Specialized in tap installations, RO filters assembly, and general drainage maintenance."
+        },
+        {
+            id: "plumb-3",
+            name: "Nisha Patel",
+            avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&auto=format&fit=crop&q=80",
+            experience: "9 Years",
+            charge: "₹289",
+            availability: "Mon-Fri, 8 AM - 4 PM",
+            location: "Indiranagar, Bangalore",
+            responseRate: "96% (under 15 mins)",
+            rating: "4.85",
+            reviewsCount: 156,
+            trustScore: "96",
+            skills: ["Water Heaters", "Pipe Fitting", "Leak Repair", "Toilet Installations"],
+            certifications: ["Certified Master Plumber"],
+            portfolio: [],
+            about: "Thorough and reliable plumbing services. Known for leaving the workspace spotless after jobs."
         }
     ],
     mechanic: [
@@ -92,6 +149,7 @@ const workersData = {
             experience: "10 Years",
             charge: "₹399",
             availability: "Today, 8 AM - 8 PM",
+            location: "Marathahalli, Bangalore",
             responseRate: "97% (under 15 mins)",
             rating: "4.9",
             reviewsCount: 220,
@@ -103,6 +161,23 @@ const workersData = {
                 "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=150&auto=format&fit=crop&q=80"
             ],
             about: "Master technician for single-cylinder to multi-cylinder superbikes. Specializes in performance diagnostics, brake calibration, and engine tuning."
+        },
+        {
+            id: "mech-2",
+            name: "David Fernandez",
+            avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop&q=80",
+            experience: "15 Years",
+            charge: "₹499",
+            availability: "Mon-Sat, 9 AM - 7 PM",
+            location: "Koramangala, Bangalore",
+            responseRate: "94% (under 18 mins)",
+            rating: "4.95",
+            reviewsCount: 412,
+            trustScore: "98",
+            skills: ["Car Engine Repair", "Transmission Specialist", "AC Servicing", "Dent & Paint"],
+            certifications: ["ASE Master Mechanic"],
+            portfolio: [],
+            about: "Complete car care specialist. From regular servicing to complex engine rebuilds, I ensure your vehicle runs smoothly."
         }
     ],
     carpenter: [
@@ -113,6 +188,7 @@ const workersData = {
             experience: "15 Years",
             charge: "₹450",
             availability: "Mon - Fri, 9 AM - 6 PM",
+            location: "Whitefield, Bangalore",
             responseRate: "93% (under 18 mins)",
             rating: "4.88",
             reviewsCount: 165,
@@ -124,17 +200,37 @@ const workersData = {
                 "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=150&auto=format&fit=crop&q=80"
             ],
             about: "Artisan woodwork practitioner. Specializes in luxury modular setups, custom-designed storage, and high-security smart lock configurations."
+        },
+        {
+            id: "carp-2",
+            name: "Lakshmi Narayanan",
+            avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80",
+            experience: "7 Years",
+            charge: "₹250",
+            availability: "All Week, 10 AM - 6 PM",
+            location: "Indiranagar, Bangalore",
+            responseRate: "97% (under 10 mins)",
+            rating: "4.75",
+            reviewsCount: 92,
+            trustScore: "95",
+            skills: ["Door Alignment", "Cabinet Hinge Repair", "Small Wood Crafts", "IKEA Assembly"],
+            certifications: ["Vocational Woodwork Trained"],
+            portfolio: [],
+            about: "Expert at fixing creaky doors, misaligned cabinets, and assembling flat-pack furniture swiftly."
         }
     ]
 };
 
 const reviewsData = [
-    { stars: 5, reviewer: "Rajiv Chandrasekhar", text: "Amit Sharma did an exceptional job hydro-jetting our clogged drain line. Transparent pricing and complete professional equipment. Highly recommended!", date: "15 Mins Ago • Bangalore" },
-    { stars: 5, reviewer: "Meera Nair", text: "Rajesh Kumar arrived in 10 minutes flat! Fixed the sparkling distribution board quickly. Having certified experts with background clearance is highly comforting.", date: "1 Hour Ago • Bangalore" },
-    { stars: 4, reviewer: "Rohit Deshmukh", text: "Imran Khan tuned my bike's carburetor perfectly. The throttle response feels like a brand-new machine. Docked one star because the payment gateway was lagging.", date: "3 Hours Ago • Bangalore" },
-    { stars: 5, reviewer: "Ananya Hegde", text: "Sunita Rao installed our new eco-inverter system. Extremely tidy work, neat cables, and explained the battery maintenance rules clearly. Outstanding experience!", date: "Yesterday • Bangalore" },
-    { stars: 3, reviewer: "Suresh Gowda", text: "Karan Johar replaced a tap and water purifier pipeline. The work was decent, but he arrived 20 minutes later than scheduled.", date: "2 Days Ago • Bangalore" },
-    { stars: 1, reviewer: "Vikram Sen", text: "Unverified third-party technician who claimed to be helper arrived. Instantly rejected and raised query. FixKart helpline handled refund immediately.", date: "3 Days Ago • Bangalore" }
+    { stars: 5, reviewer: "Rajiv Chandrasekhar", text: "Amit Sharma did an exceptional job hydro-jetting our clogged drain line. Transparent pricing and complete professional equipment. Highly recommended!", date: "15 Mins Ago • Jayanagar" },
+    { stars: 5, reviewer: "Meera Nair", text: "Rajesh Kumar arrived in 10 minutes flat! Fixed the sparkling distribution board quickly. Having certified experts with background clearance is highly comforting.", date: "1 Hour Ago • Indiranagar" },
+    { stars: 4, reviewer: "Rohit Deshmukh", text: "Imran Khan tuned my bike's carburetor perfectly. The throttle response feels like a brand-new machine. Docked one star because the payment gateway was lagging.", date: "3 Hours Ago • Marathahalli" },
+    { stars: 5, reviewer: "Ananya Hegde", text: "Sunita Rao installed our new eco-inverter system. Extremely tidy work, neat cables, and explained the battery maintenance rules clearly. Outstanding experience!", date: "Yesterday • Koramangala" },
+    { stars: 3, reviewer: "Suresh Gowda", text: "Karan Johar replaced a tap and water purifier pipeline. The work was decent, but he arrived 20 minutes later than scheduled.", date: "2 Days Ago • Bellandur" },
+    { stars: 1, reviewer: "Vikram Sen", text: "Unverified third-party technician who claimed to be helper arrived. Instantly rejected and raised query. FixKart helpline handled refund immediately.", date: "3 Days Ago • Whitefield" },
+    { stars: 5, reviewer: "Sneha Reddy", text: "Syed Ali came in at 2 AM to fix our main panel short circuit. Absolute lifesaver! Very professional.", date: "1 Week Ago • Whitefield" },
+    { stars: 4, reviewer: "Karthik M", text: "David fixed my car's AC issue in an hour. Fair pricing compared to the dealership.", date: "2 Weeks Ago • Koramangala" },
+    { stars: 5, reviewer: "Anita Paul", text: "Lakshmi put together my entire IKEA bedroom set. She was fast and precise. Totally worth it.", date: "1 Month Ago • Indiranagar" }
 ];
 
 const timelineSteps = [
@@ -232,7 +328,7 @@ export default function App() {
             .catch(err => {
                 console.error("Failed to fetch workers:", err);
                 setIsLoadingWorkers(false);
-                setWorkersList([]);
+                setWorkersList(workersData[activeCat] || []);
             });
     }, [activeCat]);
     
@@ -726,7 +822,7 @@ export default function App() {
                                         <h4 className="text-base font-bold text-white">{worker.name}</h4>
                                         <span className="bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20 text-[9px] px-2 py-0.5 rounded-full"><i className="fa-solid fa-circle-check"></i> Verified</span>
                                     </div>
-                                    <div className="text-xs text-gray-500 mt-0.5">{worker.experience} Exp • {worker.charge}/hr basis</div>
+                                    <div className="text-xs text-gray-500 mt-0.5">{worker.experience} Exp • {worker.charge}/hr basis • <i className="fa-solid fa-location-dot"></i> {worker.location || "Bangalore"}</div>
                                     <div className="text-xs text-brand-amber font-semibold mt-2 flex items-center gap-1.5"><i className="fa-solid fa-star"></i> {worker.rating} ({worker.reviewsCount} reviews)</div>
                                 </div>
                             </div>
@@ -748,7 +844,7 @@ export default function App() {
                                                 <h3 className="text-2xl font-bold">{worker.name}</h3>
                                                 <span className="bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20 text-[10px] px-2.5 py-0.5 rounded-full font-bold"><i className="fa-solid fa-circle-check"></i> ML Verified</span>
                                             </div>
-                                            <div className="text-xs text-gray-500 font-bold uppercase tracking-wider">{activeCat} specialist • {worker.experience} expert</div>
+                                            <div className="text-xs text-gray-500 font-bold uppercase tracking-wider">{activeCat} specialist • {worker.experience} expert • <i className="fa-solid fa-location-dot text-brand-red"></i> {worker.location || "Bangalore"}</div>
                                             <div className="mt-2.5">
                                                 <span className="bg-brand-amber/10 text-brand-amber border border-brand-amber/25 text-[10px] px-2.5 py-0.5 rounded-full font-bold"><i className="fa-solid fa-shield-halved"></i> Trust Score: {worker.trustScore}/100</span>
                                             </div>
