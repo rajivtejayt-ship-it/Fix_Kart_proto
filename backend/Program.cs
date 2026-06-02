@@ -6,21 +6,21 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 
-// Configure Entity Framework Core with SQL Server
+// Configure Entity Framework Core with SQLite
 builder.Services.AddDbContext<FixKartDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Configure CORS for local React frontend development
+// Configure CORS for local React frontend development and production
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173", "http://localhost:3000") // Common Vite/CRA ports
+            policy.AllowAnyOrigin() // Allow production frontend URLs easily
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });

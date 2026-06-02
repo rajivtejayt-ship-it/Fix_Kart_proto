@@ -207,10 +207,12 @@ export default function App() {
     const [workersList, setWorkersList] = useState([]);
     const [isLoadingWorkers, setIsLoadingWorkers] = useState(false);
 
+    const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
     // Fetch Workers from API whenever activeCat changes
     useEffect(() => {
         setIsLoadingWorkers(true);
-        fetch('http://localhost:5000/api/Workers?category=' + activeCat)
+        fetch(`${API_BASE_URL}/api/Workers?category=${activeCat}`)
             .then(res => res.json())
             .then(data => {
                 // Deserialize JSON strings back to arrays
@@ -241,7 +243,7 @@ export default function App() {
     // Fetch pending approvals when dashboard is on 'approvals' tab
     useEffect(() => {
         if(dbTab === "approvals") {
-            fetch('http://localhost:5000/api/Admin/pending-approvals')
+            fetch(`${API_BASE_URL}/api/Admin/pending-approvals`)
                 .then(res => res.json())
                 .then(data => {
                     // Map backend model to dashboard schema
@@ -340,7 +342,7 @@ export default function App() {
     };
 
     const approveApplicant = (id) => {
-        fetch('http://localhost:5000/api/Admin/approve/' + id, { method: 'POST' })
+        fetch(`${API_BASE_URL}/api/Admin/approve/${id}`, { method: 'POST' })
             .then(res => {
                 if (res.ok) {
                     setPendingApprovals(prev => prev.filter(app => app.id !== id));
@@ -351,7 +353,7 @@ export default function App() {
     };
 
     const rejectApplicant = (id) => {
-        fetch('http://localhost:5000/api/Admin/reject/' + id, { method: 'POST' })
+        fetch(`${API_BASE_URL}/api/Admin/reject/${id}`, { method: 'POST' })
             .then(res => {
                 if (res.ok) {
                     setPendingApprovals(prev => prev.filter(app => app.id !== id));
@@ -375,7 +377,7 @@ export default function App() {
             baseRate: activeTargetWorker ? parseFloat(activeTargetWorker.charge.replace(/[^0-9.]/g, '')) : 0
         };
 
-        fetch('http://localhost:5000/api/Bookings', {
+        fetch(`${API_BASE_URL}/api/Bookings`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(bookingData)
