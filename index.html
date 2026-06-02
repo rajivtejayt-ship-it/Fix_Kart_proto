@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixKart | Smart Local Services Marketplace</title>
+    <meta name="description" content="FixKart connects you with verified local service workers like plumbers, electricians, and mechanics instantly. Quick, reliable, and secure.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Gradient Ambient Background Elements -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                <span class="logo-text">Fix<span>Kart</span></span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#showcase" class="nav-link">Find Workers</a>
+                <a href="#trust" class="nav-link">Trust & Reviews</a>
+                <a href="#benefits" class="nav-link">Benefits</a>
+                <a href="#dashboard" class="nav-link">Admin Dashboard</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn btn-secondary btn-sm" onclick="openBookingModal('worker')">Join as Worker</button>
+                <button class="btn btn-primary btn-sm" onclick="openBookingModal('customer')">Book Service</button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-grid">
+                <div class="hero-content reveal-on-scroll">
+                    <div class="badge-premium"><i class="fa-solid fa-bolt-lightning"></i> Smart Local Services Marketplace</div>
+                    <h1 class="hero-title">Your Local Service Experts, Connected <span>Instantly</span></h1>
+                    <p class="hero-subtitle">
+                        Tired of unverified, expensive, and delayed repairs? FixKart matches you with verified local plumbers, electricians, mechanics, and technicians within minutes with transparent pricing.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-lg" onclick="openBookingModal('customer')">
+                            <i class="fa-solid fa-calendar-check"></i> Book a Service
+                        </button>
+                        <button class="btn btn-secondary btn-lg" onclick="openBookingModal('worker')">
+                            <i class="fa-solid fa-briefcase"></i> Join as a Worker
+                        </button>
+                    </div>
+                    <div class="hero-secondary-action">
+                        <a href="#how-it-works" class="explore-link">
+                            Explore How It Works <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15k+</span>
+                            <span class="stat-label">Verified Pros</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">250k+</span>
+                            <span class="stat-label">Jobs Completed</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.9/5</span>
+                            <span class="stat-label">Avg. Trust Rating</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual reveal-on-scroll delay-1">
+                    <div class="mockup-frame">
+                        <div class="mockup-header">
+                            <div class="mockup-dots"><span></span><span></span><span></span></div>
+                            <div class="mockup-title">FixKart Live Booking Engine</div>
+                        </div>
+                        <div class="mockup-body">
+                            <!-- Dynamic App UI Interface Mock -->
+                            <div class="app-ui">
+                                <div class="app-header">
+                                    <div class="app-location">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>Indiranagar, Bangalore</span>
+                                    </div>
+                                    <div class="app-profile-pic">R</div>
+                                </div>
+                                <div class="app-search">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="text" placeholder="Search electrician, bike mechanic..." disabled>
+                                </div>
+                                <div class="app-categories-mini">
+                                    <div class="cat-pill active"><i class="fa-solid fa-plug"></i> Electric</div>
+                                    <div class="cat-pill"><i class="fa-solid fa-faucet"></i> Plumbing</div>
+                                    <div class="cat-pill"><i class="fa-solid fa-motorcycle"></i> Mechanic</div>
+                                </div>
+                                <div class="app-live-status">
+                                    <div class="pulse-indicator"></div>
+                                    <span>32 Electricians online in your area</span>
+                                </div>
+                                <!-- Floating Interactive Mockup Card -->
+                                <div class="app-worker-card">
+                                    <div class="worker-card-main">
+                                        <img src="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=150&auto=format&fit=crop&q=80" alt="Worker Rajesh" class="worker-avatar">
+                                        <div class="worker-card-info">
+                                            <div class="worker-name-row">
+                                                <h4>Rajesh Kumar</h4>
+                                                <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                                            </div>
+                                            <p class="worker-skill-tag">Senior Electrician • 8 Yrs Exp</p>
+                                            <div class="worker-metrics">
+                                                <span><i class="fa-solid fa-star"></i> 4.9 (184 reviews)</span>
+                                                <span>•</span>
+                                                <span class="success-text"><i class="fa-solid fa-circle-check"></i> 99% Match</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="worker-card-cta">
+                                        <div class="worker-price">₹299<span>/hr basis</span></div>
+                                        <button class="btn btn-primary btn-xs" onclick="openBookingModal('customer')">Book Now</button>
+                                    </div>
+                                </div>
+                                <!-- Map overlay dynamic graphics -->
+                                <div class="app-map-placeholder">
+                                    <svg viewBox="0 0 400 160" class="map-vector">
+                                        <!-- Map roads -->
+                                        <path d="M 0 40 L 400 40" stroke="rgba(255,255,255,0.08)" stroke-width="8" fill="none" />
+                                        <path d="M 0 120 L 400 120" stroke="rgba(255,255,255,0.08)" stroke-width="6" fill="none" />
+                                        <path d="M 120 0 L 120 160" stroke="rgba(255,255,255,0.08)" stroke-width="8" fill="none" />
+                                        <path d="M 280 0 L 280 160" stroke="rgba(255,255,255,0.08)" stroke-width="6" fill="none" />
+                                        <!-- Map markers -->
+                                        <circle cx="120" cy="40" r="15" fill="rgba(79, 70, 229, 0.2)" />
+                                        <circle cx="120" cy="40" r="5" fill="#4F46E5" />
+                                        
+                                        <circle cx="280" cy="120" r="15" fill="rgba(16, 185, 129, 0.2)" class="pulse-marker" />
+                                        <circle cx="280" cy="120" r="5" fill="#10B981" />
+                                        
+                                        <circle cx="120" cy="100" r="10" fill="rgba(245, 158, 11, 0.2)" />
+                                        <circle cx="120" cy="100" r="4" fill="#F59E0B" />
+                                        <!-- Connection dotted line -->
+                                        <path d="M 120 40 Q 200 80 280 120" stroke="#4F46E5" stroke-width="2" stroke-dasharray="5 5" fill="none" class="dash-path" />
+                                    </svg>
+                                    <div class="map-label">Realtime Proximity Matching Engine</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About / Problem-Solution Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">The local service industry is broken. <br>We are here to <span>Fix It</span>.</h2>
+                    <p class="section-desc">Finding a reliable technician shouldn't feel like a gamble. Here is how we bridge the gap between customers and service providers.</p>
+                </div>
+                
+                <div class="problem-solution-grid reveal-on-scroll">
+                    <!-- The Pain (Problem) -->
+                    <div class="pain-card glass-panel">
+                        <div class="card-status-pill pain-pill"><i class="fa-solid fa-triangle-exclamation"></i> The Broken Way</div>
+                        <h3 class="card-headline">Unorganized & Hazardous</h3>
+                        <ul class="pain-list">
+                            <li>
+                                <div class="icon-wrap error-color"><i class="fa-solid fa-xmark"></i></div>
+                                <div>
+                                    <strong>Blind Pricing:</strong> No upfront rates; hidden charges and unfair post-service price inflation.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-wrap error-color"><i class="fa-solid fa-xmark"></i></div>
+                                <div>
+                                    <strong>No Safety Check:</strong> Allowing unverified workers into your home with zero background screening.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-wrap error-color"><i class="fa-solid fa-xmark"></i></div>
+                                <div>
+                                    <strong>Frustrating Delays:</strong> Spending hours calling, haggling, and waiting for callbacks that never arrive.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-wrap error-color"><i class="fa-solid fa-xmark"></i></div>
+                                <div>
+                                    <strong>Zero Accountability:</strong> No post-job warranty, protection against damage, or grievance support.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- The Pleasure (Solution) -->
+                    <div class="pleasure-card glass-panel-glow">
+                        <div class="card-status-pill success-pill"><i class="fa-solid fa-circle-check"></i> The FixKart Solution</div>
+                        <h3 class="card-headline">Safe, Direct & Seamless</h3>
+                        <ul class="pleasure-list">
+                            <li>
+                                <div class="icon-wrap success-color"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <strong>Hourly & Fixed Rates:</strong> Clear pricing with estimates provided before booking. Zero hidden markups.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-wrap success-color"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <strong>Double-Verified Pros:</strong> Criminal records check, skill certification verification, and facial recognition checks.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-wrap success-color"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <strong>Instant Proximity Match:</strong> Instantly discover professionals within a 5km radius ready for immediate dispatch.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon-wrap success-color"><i class="fa-solid fa-check"></i></div>
+                                <div>
+                                    <strong>100% Protection & Warranty:</strong> ₹10,000 damage insurance coverage on every book plus 15-day service guarantees.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Key Features Section -->
+        <section class="features-section" id="features">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">Packed with <span>Superpowers</span></h2>
+                    <p class="section-desc">Designed with industry-first features that ensure transparency, reliability, and security for both sides of the marketplace.</p>
+                </div>
+
+                <div class="features-grid">
+                    <!-- Card 1 -->
+                    <div class="feature-card glass-panel reveal-on-scroll">
+                        <div class="feature-icon"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+                        <h3>Proximity Search</h3>
+                        <p>Search workers by micro-location and service categories with real-time availability filters.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="feature-card glass-panel reveal-on-scroll">
+                        <div class="feature-icon"><i class="fa-solid fa-address-card"></i></div>
+                        <h3>Worker E-Commerce Pages</h3>
+                        <p>Detailed worker portfolios displaying charges, certifications, availability calendar, and ratings.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="feature-card glass-panel reveal-on-scroll">
+                        <div class="feature-icon"><i class="fa-solid fa-ranking-stars"></i></div>
+                        <h3>Granular Rating Matrix</h3>
+                        <p>Multi-dimensional review scores for reliability, cleanliness, behavior, and cost fairness.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="feature-card glass-panel reveal-on-scroll">
+                        <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
+                        <h3>Instant or Scheduled</h3>
+                        <p>Book emergency repairs instantly or schedule appointments in advance around your timeline.</p>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="feature-card glass-panel reveal-on-scroll">
+                        <div class="feature-icon"><i class="fa-solid fa-comments"></i></div>
+                        <h3>Encrypted Live Chat</h3>
+                        <p>Discuss job requirements, share photos of repair tasks, and share locations directly inside the app.</p>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="feature-card glass-panel reveal-on-scroll">
+                        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Trust Score Badge</h3>
+                        <p>A dynamic, machine-learning based Trust Index scoring worker safety, completion rate, and quality.</p>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="feature-card glass-panel reveal-on-scroll">
+                        <div class="feature-icon"><i class="fa-solid fa-wallet"></i></div>
+                        <h3>Flexible Digital Payments</h3>
+                        <p>Integrated UPI, digital wallets, secure credit/debit escrow, or pay cash post-service.</p>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="feature-card glass-panel reveal-on-scroll">
+                        <div class="feature-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <h3>Emergency SOS Alerts</h3>
+                        <p>One-tap SOS alerts dispatch immediate emergency service backup if unexpected issues arise.</p>
+                    </div>
+                    <!-- Card 9 -->
+                    <div class="feature-card glass-panel reveal-on-scroll">
+                        <div class="feature-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>AI Recommendation</h3>
+                        <p>Smart algorithms recommending best-suited, top-rated workers based on project budgets and history.</p>
+                    </div>
+                    <!-- Card 10 -->
+                    <div class="feature-card glass-panel reveal-on-scroll">
+                        <div class="feature-icon"><i class="fa-solid fa-language"></i></div>
+                        <h3>Multi-Language UI</h3>
+                        <p>Supports English, Hindi, Kannada, Tamil, Telugu, and custom regional languages for technicians.</p>
+                    </div>
+                    <!-- Card 11 -->
+                    <div class="feature-card glass-panel reveal-on-scroll">
+                        <div class="feature-icon"><i class="fa-solid fa-eye-slash"></i></div>
+                        <h3>Fraud Detection Guard</h3>
+                        <p>Protects workers and customers from fake bookings, spam accounts, and unsafe off-platform deals.</p>
+                    </div>
+                    <!-- Card 12 -->
+                    <div class="feature-card glass-panel reveal-on-scroll">
+                        <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Rich Admin Dashboard</h3>
+                        <p>Powerful internal tooling for worker approvals, verification, complaint management, and revenue flows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. How It Works Section -->
+        <section class="how-it-works-section" id="how-it-works">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">Simplicity in <span>Action</span></h2>
+                    <p class="section-desc">Seven intuitive steps connecting a customer needing assistance to a local expert executing the task perfectly.</p>
+                </div>
+
+                <div class="timeline-container reveal-on-scroll">
+                    <!-- Steps Navigation -->
+                    <div class="timeline-steps">
+                        <div class="timeline-step active" data-step="1">
+                            <span class="step-num">1</span>
+                            <span class="step-label">Search Category</span>
+                        </div>
+                        <div class="timeline-step" data-step="2">
+                            <span class="step-num">2</span>
+                            <span class="step-label">Select Worker</span>
+                        </div>
+                        <div class="timeline-step" data-step="3">
+                            <span class="step-num">3</span>
+                            <span class="step-label">Check Reviews</span>
+                        </div>
+                        <div class="timeline-step" data-step="4">
+                            <span class="step-num">4</span>
+                            <span class="step-label">Book Appointment</span>
+                        </div>
+                        <div class="timeline-step" data-step="5">
+                            <span class="step-num">5</span>
+                            <span class="step-label">Accept & Dispatch</span>
+                        </div>
+                        <div class="timeline-step" data-step="6">
+                            <span class="step-num">6</span>
+                            <span class="step-label">Service Execution</span>
+                        </div>
+                        <div class="timeline-step" data-step="7">
+                            <span class="step-num">7</span>
+                            <span class="step-label">Secure Payment</span>
+                        </div>
+                    </div>
+
+                    <!-- Step Display Content Area -->
+                    <div class="timeline-card glass-panel-glow">
+                        <div class="timeline-content-grid">
+                            <div class="timeline-text-content">
+                                <h3 id="timeline-step-title">Step 1: Choose Your Service</h3>
+                                <p id="timeline-step-desc">Pick from a wide list of domestic and commercial repairs like plumbers, carpenters, device technicians, and vehicle mechanics instantly using the intelligent category finder.</p>
+                                <div class="step-indicator-dots" id="stepIndicatorDots">
+                                    <!-- Rendered dynamically or static -->
+                                    <span class="dot active"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="timeline-visual-content">
+                                <div class="phone-frame">
+                                    <div class="phone-camera"></div>
+                                    <div class="phone-screen" id="phoneScreenMock">
+                                        <!-- Dynamic Phone Screen Display for current active step -->
+                                        <div class="phone-step-1">
+                                            <div class="phone-nav"><i class="fa-solid fa-chevron-left"></i> <span>Find Services</span></div>
+                                            <div class="phone-search-bar"><i class="fa-solid fa-magnifying-glass"></i> Search services...</div>
+                                            <div class="phone-grid">
+                                                <div class="phone-cat-box active"><i class="fa-solid fa-plug"></i><span>Electrical</span></div>
+                                                <div class="phone-cat-box"><i class="fa-solid fa-faucet"></i><span>Plumbing</span></div>
+                                                <div class="phone-cat-box"><i class="fa-solid fa-motorcycle"></i><span>Mechanic</span></div>
+                                                <div class="phone-cat-box"><i class="fa-solid fa-hammer"></i><span>Carpentry</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Worker Profile Showcase -->
+        <section class="showcase-section" id="showcase">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">E-Commerce style <span>Worker Profiles</span></h2>
+                    <p class="section-desc">No more anonymous technicians. Review certifications, past portfolios, rates, and verified trust scores before making your hire decision.</p>
+                </div>
+
+                <div class="showcase-container reveal-on-scroll">
+                    <!-- Selector categories -->
+                    <div class="worker-categories-bar">
+                        <button class="worker-cat-btn active" data-category="electrician">Electricians</button>
+                        <button class="worker-cat-btn" data-category="plumber">Plumbers</button>
+                        <button class="worker-cat-btn" data-category="mechanic">Bike Mechanics</button>
+                        <button class="worker-cat-btn" data-category="carpenter">Carpenters</button>
+                    </div>
+
+                    <!-- Combined Interactive Showcase Grid -->
+                    <div class="worker-showcase-grid">
+                        
+                        <!-- List of workers on Left -->
+                        <div class="worker-list-side" id="workerListSide">
+                            <!-- Rendered dynamically by app.js -->
+                        </div>
+
+                        <!-- Active Worker Product Page Showcase on Right -->
+                        <div class="worker-product-page glass-panel-glow" id="workerProductPage">
+                            <!-- Populated dynamically by app.js -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Review & Trust System -->
+        <section class="trust-section" id="trust">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">The Gold Standard of <span>Trust & Reviews</span></h2>
+                    <p class="section-desc">Our multi-dimensional scoring ensures total security and premium quality ratings. No fake reviews, only verified customer submissions.</p>
+                </div>
+
+                <div class="trust-grid reveal-on-scroll">
+                    <!-- Trust Metrics Visual -->
+                    <div class="trust-score-card glass-panel-glow">
+                        <div class="trust-score-header">
+                            <span class="trust-title">FixKart Algorithmic Trust Score</span>
+                            <span class="trust-status-badge"><i class="fa-solid fa-shield-halved"></i> ML Moderated</span>
+                        </div>
+                        <div class="trust-circle-wrap">
+                            <svg viewBox="0 0 120 120" class="progress-circle">
+                                <circle cx="60" cy="60" r="50" class="bg-circle" />
+                                <circle cx="60" cy="60" r="50" class="fg-circle" stroke-dasharray="314.16" stroke-dashoffset="31.4" />
+                            </svg>
+                            <div class="trust-value">
+                                <h3>95.8</h3>
+                                <span>Excellent</span>
+                            </div>
+                        </div>
+                        <p class="trust-explanation">
+                            Our ML-driven Trust Score is continuously calculated based on user ratings, verified certifications, dispute frequencies, and background check milestones.
+                        </p>
+                        <div class="trust-metrics-breakdown">
+                            <div class="metric-row">
+                                <span>Background Check Clear Rate</span>
+                                <span class="metric-val">100%</span>
+                            </div>
+                            <div class="metric-row">
+                                <span>Job Completion Rate</span>
+                                <span class="metric-val">98.2%</span>
+                            </div>
+                            <div class="metric-row">
+                                <span>Response Time Limit (under 10m)</span>
+                                <span class="metric-val">94.5%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Filter Dashboard -->
+                    <div class="review-matrix-card glass-panel">
+                        <h3 class="card-headline">Verified Customer Review Matrix</h3>
+                        
+                        <div class="rating-overall-row">
+                            <div class="rating-overall-big">4.8</div>
+                            <div class="rating-stars-column">
+                                <div class="stars-gold">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="stars-count-label">Based on 145,200 reviews</span>
+                            </div>
+                        </div>
+
+                        <!-- Rating bars filter dynamic -->
+                        <div class="rating-filter-bars">
+                            <div class="rating-bar-item cursor-pointer" onclick="filterReviews(5)">
+                                <span>5 Star</span>
+                                <div class="progress-track"><div class="progress-bar" style="width: 82%"></div></div>
+                                <span>82%</span>
+                            </div>
+                            <div class="rating-bar-item cursor-pointer" onclick="filterReviews(4)">
+                                <span>4 Star</span>
+                                <div class="progress-track"><div class="progress-bar" style="width: 12%"></div></div>
+                                <span>12%</span>
+                            </div>
+                            <div class="rating-bar-item cursor-pointer" onclick="filterReviews(3)">
+                                <span>3 Star</span>
+                                <div class="progress-track"><div class="progress-bar" style="width: 4%"></div></div>
+                                <span>4%</span>
+                            </div>
+                            <div class="rating-bar-item cursor-pointer" onclick="filterReviews(2)">
+                                <span>2 Star</span>
+                                <div class="progress-track"><div class="progress-bar" style="width: 1%"></div></div>
+                                <span>1%</span>
+                            </div>
+                            <div class="rating-bar-item cursor-pointer" onclick="filterReviews(1)">
+                                <span>1 Star</span>
+                                <div class="progress-track"><div class="progress-bar" style="width: 1%"></div></div>
+                                <span>1%</span>
+                            </div>
+                        </div>
+
+                        <!-- Live Reviews Container -->
+                        <div class="live-reviews-container">
+                            <h4 class="sub-headline">Live Verified Review Streams <span id="ratingFilterText">(Showing All Stars)</span></h4>
+                            <div class="review-scroller" id="reviewScroller">
+                                <!-- Populated dynamically by app.js -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Benefits Section -->
+        <section class="benefits-section" id="benefits">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">Empowering the <span>Whole Ecosystem</span></h2>
+                    <p class="section-desc">FixKart is structured symmetrically. We offer premium features that elevate domestic living standards and unlock economic potential for service workers.</p>
+                </div>
+
+                <div class="benefits-grid reveal-on-scroll">
+                    <!-- Column 1: For Customers -->
+                    <div class="benefit-col-card customer-benefits glass-panel">
+                        <div class="col-icon-header customer-color">
+                            <i class="fa-solid fa-house-chimney-user"></i>
+                            <h3>For Customers</h3>
+                        </div>
+                        <ul class="benefits-checklist">
+                            <li>
+                                <div class="benefit-check"><i class="fa-solid fa-circle-check"></i></div>
+                                <div>
+                                    <h4>Fast Emergency Booking</h4>
+                                    <p>Find nearby professionals and see dispatch confirmations in under 90 seconds flat.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-check"><i class="fa-solid fa-circle-check"></i></div>
+                                <div>
+                                    <h4>Transparent Pricing & Billing</h4>
+                                    <p>No unexpected bills. Pay exactly what was quoted dynamically in the profile upfront.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-check"><i class="fa-solid fa-circle-check"></i></div>
+                                <div>
+                                    <h4>Rigorous Safety Framework</h4>
+                                    <p>Verified background clearance details and OTP-secured visit access for maximum safety.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-check"><i class="fa-solid fa-circle-check"></i></div>
+                                <div>
+                                    <h4>Satisfaction Guarantee</h4>
+                                    <p>Free re-execution or refund protection if the job is not completed to standard.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: For Workers -->
+                    <div class="benefit-col-card worker-benefits glass-panel-glow">
+                        <div class="col-icon-header worker-color">
+                            <i class="fa-solid fa-user-gear"></i>
+                            <h3>For Local Workers</h3>
+                        </div>
+                        <ul class="benefits-checklist">
+                            <li>
+                                <div class="benefit-check"><i class="fa-solid fa-circle-check"></i></div>
+                                <div>
+                                    <h4>Zero Middlemen & High Revenue</h4>
+                                    <p>Retain 90% of service booking values directly. Say goodbye to exploitative job agents.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-check"><i class="fa-solid fa-circle-check"></i></div>
+                                <div>
+                                    <h4>Steady Stream of Leads</h4>
+                                    <p>Our localized recommendation algorithm continuously brings hyper-local leads straight to your device.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-check"><i class="fa-solid fa-circle-check"></i></div>
+                                <div>
+                                    <h4>Dynamic E-Commerce Profile</h4>
+                                    <p>Own your digital brand with certification uploads, job portfolios, custom pricing, and ratings.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="benefit-check"><i class="fa-solid fa-circle-check"></i></div>
+                                <div>
+                                    <h4>Instant Escrow Payouts</h4>
+                                    <p>Receive earnings directly to your UPI bank account immediately within hours of job sign-off.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Advanced Features / Future Scope -->
+        <section class="advanced-features-section" id="future">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">Advanced Scope & <span>Future Frontiers</span></h2>
+                    <p class="section-desc">FixKart is designed for scalable longevity. Our blueprint incorporates advanced integrations and AI modules setting the next paradigm.</p>
+                </div>
+
+                <div class="advanced-grid">
+                    <!-- Box 1 -->
+                    <div class="adv-card glass-panel reveal-on-scroll">
+                        <span class="adv-badge">Phase 2</span>
+                        <div class="adv-icon"><i class="fa-solid fa-robot"></i></div>
+                        <h3>AI Booking Assistant</h3>
+                        <p>Natural language voice-activated booking bots matching complex complaints (e.g. "sparking behind my washing machine") to specific technician skills.</p>
+                    </div>
+                    <!-- Box 2 -->
+                    <div class="adv-card glass-panel reveal-on-scroll">
+                        <span class="adv-badge">Phase 2</span>
+                        <div class="adv-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h3>Live GPS Worker Tracking</h3>
+                        <p>Real-time transit updates similar to Uber/Zomato, showing the worker's exact location, dispatch ETA, and route map status.</p>
+                    </div>
+                    <!-- Box 3 -->
+                    <div class="adv-card glass-panel reveal-on-scroll">
+                        <span class="adv-badge">Phase 2</span>
+                        <div class="adv-icon"><i class="fa-solid fa-video"></i></div>
+                        <h3>Pre-Job Video Consultation</h3>
+                        <p>Integrated instant video calling allowing remote diagnostics to save transit time, formulate bills, and list parts needed.</p>
+                    </div>
+                    <!-- Box 4 -->
+                    <div class="adv-card glass-panel reveal-on-scroll">
+                        <span class="adv-badge">Phase 3</span>
+                        <div class="adv-icon"><i class="fa-solid fa-shield-cat"></i></div>
+                        <h3>All-Risk Insurance Policies</h3>
+                        <p>Partnering with tier-1 insurance groups to cover damages or electrical component short-circuits up to ₹50,000 under a nominal premium.</p>
+                    </div>
+                    <!-- Box 5 -->
+                    <div class="adv-card glass-panel reveal-on-scroll">
+                        <span class="adv-badge">Phase 3</span>
+                        <div class="adv-icon"><i class="fa-solid fa-vr-cardboard"></i></div>
+                        <h3>AR-Assisted Troubleshooting</h3>
+                        <p>Augmented Reality lens on worker apps identifying wiring configurations, pipe pathways, and appliance failure nodes.</p>
+                    </div>
+                    <!-- Box 6 -->
+                    <div class="adv-card glass-panel reveal-on-scroll">
+                        <span class="adv-badge">Phase 3</span>
+                        <div class="adv-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h3>IoT Predictive Diagnostics</h3>
+                        <p>Smart home integrations communicating appliance wear metrics directly to FixKart to schedule maintenance appointments preemptively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Admin Dashboard Preview -->
+        <section class="dashboard-section" id="dashboard">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">FixKart <span>Command Center</span></h2>
+                    <p class="section-desc">A deep analytics and operational cockpit for trust verification, customer disputes, active dispatch supervision, and category growth metrics.</p>
+                </div>
+
+                <div class="dashboard-preview-card glass-panel-glow reveal-on-scroll">
+                    <!-- Dashboard internal navbar -->
+                    <div class="db-header">
+                        <div class="db-brand">
+                            <span class="db-pulse"></span>
+                            <strong>FixKart Operations Portal</strong>
+                            <span class="db-env-badge">v1.2 Live</span>
+                        </div>
+                        <div class="db-tabs">
+                            <button class="db-tab-btn active" data-tab="approvals" onclick="switchDbTab('approvals')">Worker Approvals <span class="db-counter">3</span></button>
+                            <button class="db-tab-btn" data-tab="analytics" onclick="switchDbTab('analytics')">Live Metrics</button>
+                            <button class="db-tab-btn" data-tab="disputes" onclick="switchDbTab('disputes')">Moderation & Disputes</button>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard dynamic main viewport -->
+                    <div class="db-viewport" id="dbViewport">
+                        <!-- Populated dynamically by app.js (Default is approvals) -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Technology Stack Section -->
+        <section class="tech-section" id="tech">
+            <div class="container">
+                <div class="section-header text-center reveal-on-scroll">
+                    <h2 class="section-title">Built with <span>Industry-Grade Tech</span></h2>
+                    <p class="section-desc">Designed with modern, secure, and infinitely scalable technologies to ensure lightning-fast operations, solid uptime, and bulletproof security.</p>
+                </div>
+
+                <div class="tech-stack-grid reveal-on-scroll">
+                    <!-- Frontend -->
+                    <div class="tech-card glass-panel">
+                        <div class="tech-category-label">Web Frontend</div>
+                        <div class="tech-icon-wrap frontend-tech"><i class="fa-brands fa-react"></i></div>
+                        <h3>React.js / Next.js</h3>
+                        <p>Enables ultra-fast Server-Side Rendering (SSR), SEO ranking optimization, and optimized landing conversions.</p>
+                    </div>
+                    <!-- Mobile -->
+                    <div class="tech-card glass-panel">
+                        <div class="tech-category-label">Mobile Client</div>
+                        <div class="tech-icon-wrap mobile-tech"><i class="fa-brands fa-google"></i></div>
+                        <h3>Flutter Cross-Platform</h3>
+                        <p>Provides a native-grade 60 FPS mobile interface across iOS & Android for customers and worker apps with single codebase.</p>
+                    </div>
+                    <!-- Backend -->
+                    <div class="tech-card glass-panel">
+                        <div class="tech-category-label">Backend Engines</div>
+                        <div class="tech-icon-wrap backend-tech"><i class="fa-brands fa-node-js"></i></div>
+                        <h3>Node.js / Express</h3>
+                        <p>Asynchronous, event-driven API engine capable of handling high concurrent live proximity mapping requests.</p>
+                    </div>
+                    <!-- Database -->
+                    <div class="tech-card glass-panel">
+                        <div class="tech-category-label">Database Escrow</div>
+                        <div class="tech-icon-wrap db-tech"><i class="fa-solid fa-database"></i></div>
+                        <h3>MongoDB & Postgres</h3>
+                        <p>Dual cluster data layers: Flexible worker portfolio documents on Mongo, secure ledger billing on Postgres.</p>
+                    </div>
+                    <!-- Authentication -->
+                    <div class="tech-card glass-panel">
+                        <div class="tech-icon-wrap auth-tech"><i class="fa-solid fa-key"></i></div>
+                        <h3>Firebase & JWT</h3>
+                        <p>OTP-verified mobile logins, standard tokenized authorization headers, and custom biometric security check gates.</p>
+                    </div>
+                    <!-- Maps & GPS -->
+                    <div class="tech-card glass-panel">
+                        <div class="tech-icon-wrap maps-tech"><i class="fa-solid fa-map"></i></div>
+                        <h3>Google Maps API</h3>
+                        <p>High-resolution proximity calculations, automated address autocomplete, and dynamic route ETAs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 11. Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand-col">
+                <a href="#" class="logo">
+                    <span class="logo-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                    <span class="logo-text">Fix<span>Kart</span></span>
+                </a>
+                <p class="footer-tagline">
+                    Empowering local service technicians with digital growth and bringing trusted solutions direct to your doorstep.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links-col">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="#about">About Concept</a></li>
+                    <li><a href="#features">Key Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#showcase">Our Specialists</a></li>
+                    <li><a href="#dashboard">Dashboard Preview</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links-col">
+                <h4>Join Ecosystem</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="openBookingModal('worker')">Apply as Professional</a></li>
+                    <li><a href="javascript:void(0)" onclick="openBookingModal('customer')">Create Customer Account</a></li>
+                    <li><a href="#">Security Safeguards</a></li>
+                    <li><a href="#">Service Warranties</a></li>
+                    <li><a href="#">Support Ticket desk</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact-col">
+                <h4>Contact Project</h4>
+                <p><i class="fa-solid fa-location-dot"></i> PES University Campus, Indiranagar Road, Bangalore, KA</p>
+                <p><i class="fa-solid fa-envelope"></i> sandbox@fixkart.in</p>
+                <p><i class="fa-solid fa-phone"></i> +91 80 4991 3822</p>
+                <div class="disclaimer-badge">College Presentation Sandbox</div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 FixKart Local Services Ecosystem. Designed for final-year project demonstration. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Charter</a>
+                    <span>•</span>
+                    <a href="#">Rules of Engagement</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Mockup Booking Modal -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-card glass-panel-glow">
+            <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+            <div class="modal-body" id="modalBodyContent">
+                <!-- Injected Dynamically by app.js based on action type -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Javascript -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Node dependencies
+node_modules/
+dist/
+build/
+.env
+
+# .NET Core
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+.vs/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
