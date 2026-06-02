@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#0B0F19] text-gray-100 font-body overflow-x-hidden relative min-height-[100vh];
+    @apply bg-[#0B0F19] text-gray-100 font-body overflow-x-hidden relative min-h-[100vh];
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -35,17 +35,17 @@
 }
 
 .glow-1 {
-  @apply top-[5%] -left-[10%] w-[600px] height-[600px];
+  @apply top-[5%] -left-[10%] w-[600px] h-[600px];
   background: radial-gradient(circle, #4F46E5 0%, transparent 70%);
 }
 
 .glow-2 {
-  @apply top-[40%] -right-[10%] w-[600px] height-[600px];
+  @apply top-[40%] -right-[10%] w-[600px] h-[600px];
   background: radial-gradient(circle, #3B82F6 0%, transparent 70%);
 }
 
 .glow-3 {
-  @apply bottom-[10%] left-[15%] w-[600px] height-[600px];
+  @apply bottom-[10%] left-[15%] w-[600px] h-[600px];
   background: radial-gradient(circle, #10B981 0%, transparent 70%);
 }
 
